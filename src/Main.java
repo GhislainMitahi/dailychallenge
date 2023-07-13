@@ -1,17 +1,20 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+//import java.util.Scanner;
+
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        User User = new User("Ghislain Mitahi", "1910-01-01");
+        Book carmilla = new Book("Qui a picker mon fromage", "Ghislain Mitahi", 20000);
+        AudioBook dracula = new AudioBook("Deracula", "Bram Stocker", 50000);
+        Ebook jeeves = new Ebook("Carry On Jeeves", "P.G. Wodehouse", 50000, "PDF");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        User.borrow(carmilla);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.printf("%s was born back in %s and here is now %d years olds. \n", User.getName(), User.getBirthDay().toString(), User.age());
+        System.out.printf("%s has borrowed these books:%s \n", User.getName(), User.borrowBooks());
+        System.out.printf(dracula.toString());
+        System.out.printf(jeeves.toString());
+
     }
 }
